@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Daftar tamu</h1>
+<h4>Anda belum mengisi buku tamu?
+    <a href="registrasi">
+        <button type="button" class="btn btn-primary btn-sm">Daftar</button>
+    </a>
+</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">No Telpon</th>
+            <th scope="col">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dt in data %}
+        <tr>
+            <th scope="row">{{ dt.id }}</th>
+            <td>{{ dt.nama }}</td>
+            <td>{{ dt.alamat }}</td>
+            <td>{{ dt.no_telpon }}</td>
+            <td>
+                <a href="">
+                    <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Silakan registrasi</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="no_urut" placeholder="No">
+    <input type="text" name="nama" placeholder="Nama">
+    <input type="text" name="alamat" placeholder="Alamat">
+    <input type="text" name="no_telpon" placeholder="No Telpon.">
+    <br><br>
+    <button type="submit" class="btn btn-success btn-sm">Submit</button>
+</form>
+{% endblock %}
