@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Silakan edit data disini</h1>
+
+<form action="" method="post">
+    {% csrf_token %}    
+    <input type="text" name="nama" value="{{ data.nama }}">
+    <input type="text" name="alamat" value="{{ data.alamat }}">
+    <input type="text" name="no_telpon" value="{{ data.no_telpon }}">
+    <br><br>
+    <button type="submit" class="btn btn-success btn-sm">Confirm Edit</button>
+</form>
+{% endblock %}

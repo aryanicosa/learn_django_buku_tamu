@@ -18,5 +18,22 @@ def registrasi(request):
         return redirect('/registrasi/tamu')
     return render(request, 'registrasi.html')
 
+def hapus(request, id):
+    baris = Registrasi.objects.get(id=id)
+    baris.delete()
+    return redirect('/registrasi/tamu')
+
+def form_edit(request, id):
+    data = Registrasi.objects.get(id=id)
+    if request.POST:
+        Registrasi.objects.filter(pk=id).update(
+            nama = request.POST['nama'],
+            alamat = request.POST['alamat'],
+            no_telpon = request.POST['no_telpon'],
+        )
+        return redirect('/registrasi/tamu')
+    return render(request, 'edit.html', {'data': data})
+    
+
 def info(request):
     return render(request, 'info.html')
