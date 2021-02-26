@@ -10,7 +10,6 @@ def tamu(request):
 def registrasi(request):
     if request.POST:
         Registrasi.objects.create(
-            no_urut = request.POST['no_urut'],
             nama = request.POST['nama'],
             alamat = request.POST['alamat'],
             no_telpon = request.POST['no_telpon'],
@@ -19,8 +18,7 @@ def registrasi(request):
     return render(request, 'registrasi.html')
 
 def hapus(request, id):
-    baris = Registrasi.objects.get(id=id)
-    baris.delete()
+    Registrasi.objects.get(id=id).delete()
     return redirect('/registrasi/tamu')
 
 def form_edit(request, id):
