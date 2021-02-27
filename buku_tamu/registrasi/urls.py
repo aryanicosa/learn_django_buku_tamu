@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, forms
 
 
 urlpatterns = [
@@ -7,5 +7,7 @@ urlpatterns = [
     path('registrasi', views.registrasi),
     path('info', views.info),
     path('hapus/<int:id>', views.hapus),
-    path('edit/<int:id>', views.form_edit)
+    path('edit/<int:id>', views.form_edit),
+    path('registrasi_baru', forms.Register.registrasi_baru),
+    #path('edit_baru/<int:id>', forms.Edit.edit_baru)
 ]

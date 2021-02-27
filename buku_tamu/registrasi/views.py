@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 
 from .models import Registrasi
 
+#from .forms import Register
+
 # Create your views here.
 def tamu(request):
     data = Registrasi.objects.all()
@@ -35,3 +37,4 @@ def form_edit(request, id):
 
 def info(request):
     return render(request, 'info.html')
+
