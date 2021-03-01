@@ -8,14 +8,17 @@ class Register(forms.ModelForm):
         exclude = []
         model = Registrasi
 
-    def registrasi_baru(self):
+    def registrasi(self):
         form = Register()
         if self.POST:
             form = Register(self.POST)
             if form.is_valid():
                 form.save()
                 return redirect('/registrasi/tamu')
-        return render(self, 'registrasi_baru.html', { 'form': form })
+        return render(self, 'registrasi.html', {
+             'form': form 
+        })
+
 '''
 class Edit(forms.ModelForm):
     class Meta:

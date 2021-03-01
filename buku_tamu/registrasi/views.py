@@ -9,6 +9,7 @@ def tamu(request):
     data = Registrasi.objects.all()
     return render(request, 'tamu.html', {'data': data})
 
+''' Sudah diganti menggunakan forms.py
 def registrasi(request):
     if request.POST:
         Registrasi.objects.create(
@@ -18,6 +19,7 @@ def registrasi(request):
         )
         return redirect('/registrasi/tamu')
     return render(request, 'registrasi.html')
+'''
 
 def hapus(request, id):
     Registrasi.objects.get(id=id).delete()
