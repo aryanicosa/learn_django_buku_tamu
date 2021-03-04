@@ -5,6 +5,18 @@
 <form action="" method="POST">
     {% csrf_token %}
     {{ form|crispy }} <!-- jangan lupa pip3 install django-crispy-forms -->
+
+    <!-- Ini digunakan untuk membuat form menggunakan plain html
+    <fieldset>
+        <label for="fname">Nama:</label><br>
+        <input type="text" name="nama" placeholder="Nama U sapa"><br>
+        <label for="lname">Alamat:</label><br>
+        <input type="text" name="alamat" placeholder="Alamat U dmn"><br>
+        <label for="lname">No. Telpon:</label><br>
+        <input type="text" name="no_telpon" placeholder="No Telpon U brp"><br><br>
+        <button type="submit" class="btn btn-primary btn-sm">Simpan</button>  
+    </fieldset>
+    -->
     <br>
     <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
 </form>

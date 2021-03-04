@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registrasi',
-    'crispy_forms', # add after installed
+    'registrasi', # apps yang dibuat
+    'crispy_forms', # ditambahkan setelah install 
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'buku_tamu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + '/templates/'],
+        'DIRS': [BASE_DIR + '/templates/'], # menghubungkan ke direktori templates 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'buku_tamu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# menghubungkan ke database yang sudah dibuat di postgresql 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -125,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# menghubungkan ke direktori static
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
